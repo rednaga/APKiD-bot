@@ -37,7 +37,7 @@ Loop:
 				info := rtm.GetInfo()
 				prefix := fmt.Sprintf("<@%s> ", info.User.ID)
 
-				if(ev.SubType == "file_share" && (ev.File.Mimetype == "application/zip" || ev.File.Mimetype == "application/octet-stream")) {
+				if(ev.SubType == "file_share" && (ev.File.Mimetype == "application/zip" || ev.File.Mimetype == "application/octet-stream" || ev.File.Mimetype == "application/vnd.android.package-archive")) {
 					fmt.Printf("Found a file share! Attempting download...\n")
 					respond(rtm, ev, prefix)
 				}
